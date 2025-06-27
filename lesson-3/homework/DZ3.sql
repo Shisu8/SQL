@@ -1,4 +1,4 @@
-﻿ Easy-Level Tasks (10)
+ Easy-Level Tasks (10)
 --Define and explain the purpose of BULK INSERT in SQL Server.
 --BULK INSERT Imports a data file into a database table or view in a user-specified format in SQL Server or simply we use the BULK INSERT statement to import data from a file into a table.
 --we can use BULK with format like .csv, .txt, .tsv,.dat where field terminator and row terminator is defined unlike in excel which cannot be 
@@ -8,11 +8,12 @@
 create table Products (ProductID int primary key, ProductName varchar(50), Price Decimal(10,2))
 Select * from Products
 --Insert three records into the Products table using INSERT INTO.
-Explain the difference between NULL and NOT NULL.
-Create table Inventory (ProductID int primary key, ProductName varchar(50), Category varchar(50), Price decimal(10,2))
 Insert into Products
-from inventory
-
+select ProductID, Productname,Price from inventory
+Explain the difference between NULL and NOT NULL.
+--I don't understand in what context you are asking but when creating table we can assign columns as null and not null to indicate if this column can contain null value NOT null is used when we do not want to leave crucial info empty like primary key or unique id
+--Create table Inventory (ProductID int primary key, ProductName varchar(50), Category varchar(50), Price decimal(10,2))
+--drop table inventory
 --Select * from Inventory
 --insert into 
 --Inventory values 
@@ -21,9 +22,14 @@ from inventory
 --(3,'Towel','Utensils',4),
 --(4,'RDR2','Video-game',30),
 --(5,'Pepsi','Beverages',2)
-Add a UNIQUE constraint to the ProductName column in the Products table.
-Write a comment in a SQL query explaining its purpose.
-Add CategoryID column to the Products table.
+--Add a UNIQUE constraint to the ProductName column in the Products table.
+alter table Products 
+add constraint win Unique (ProductName)
+--Write a comment in a SQL query explaining its purpose.
+-- comments are used to store some hints to point out mistakes, directions or simply rumbling of the developers but mainly if we want to exlude some faulty code temporarily
+--Add CategoryID column to the Products table.
+alter table Products
+add  CategoryID int
 Create a table Categories with a CategoryID as PRIMARY KEY and a CategoryName as UNIQUE.
 Explain the purpose of the IDENTITY column in SQL Server.
 🟠 Medium-Level Tasks (10)
